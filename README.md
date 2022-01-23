@@ -6,7 +6,7 @@ fork from [yolks](https://github.com/pterodactyl/yolks) with a few small tweaks:
 
 ## Available Images
 
-* [`java`](https://github.com/pterodactyl/yolks/tree/master/java)
+* [`java`](https://github.com/lhridder/yolks/tree/master/java)
   * [`java8`](https://github.com/lhridder/yolks/tree/master/java/8)
     * `ghcr.io/lhridder/yolks:java_8`
   * [`java8 - OpenJ9`](https://github.com/lhridder/yolks/tree/master/java/8j9)
