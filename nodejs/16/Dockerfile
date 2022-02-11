@@ -20,14 +20,14 @@
 # SOFTWARE.
 #
 
-FROM        --platform=$TARGETOS/$TARGETARCH node:16-alpine
+FROM        --platform=$TARGETOS/$TARGETARCH 16-bullseye
 
 LABEL       author="Matthew Penner" maintainer="matthew@pterodactyl.io"
 
 LABEL       org.opencontainers.image.source="https://github.com/pterodactyl/yolks"
 LABEL       org.opencontainers.image.licenses=MIT
 
-RUN         apk add --update --no-cache ca-certificates curl ffmpeg git openssl sqlite tar tzdata \
+RUN         apt -y install ca-certificates curl ffmpeg git openssl sqlite tar tzdata \
 				&& adduser -D -h /home/container container
 
 USER        container
