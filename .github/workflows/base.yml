@@ -1,8 +1,5 @@
 name: build oses
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 0 * * 1"
   push:
     branches:
       - master
@@ -37,4 +34,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/pterodactyl/yolks:${{ matrix.oses }}
+            ghcr.io/lhridder/yolks:${{ matrix.oses }}
