@@ -16,6 +16,8 @@ fork from [yolks](https://github.com/pterodactyl/yolks) with a few small tweaks:
     * `ghcr.io/lhridder/yolks:java_16`
   * [`java17`](https://github.com/lhridder/yolks/tree/master/java/17)
     * `ghcr.io/lhridder/yolks:java_17`
+  * [`java18`](https://github.com/lhridder/yolks/tree/master/java/18)
+    * `ghcr.io/lhridder/yolks:java_18`
 * [`nodejs`](https://github.com/lhridder/yolks/tree/master/nodejs)
   * [`node12`](https://github.com/lhridder/yolks/tree/master/nodejs/12)
     * `ghcr.io/lhridder/yolks:nodejs_12`
