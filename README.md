@@ -18,6 +18,8 @@ fork from [yolks](https://github.com/pterodactyl/yolks) with a few small tweaks:
     * `ghcr.io/lhridder/yolks:java_17`
   * [`java18`](https://github.com/lhridder/yolks/tree/master/java/18)
     * `ghcr.io/lhridder/yolks:java_18`
+  * [`java19`](https://github.com/lhridder/yolks/tree/master/java/19)
+    * `ghcr.io/lhridder/yolks:java_19`
 * [`nodejs`](https://github.com/lhridder/yolks/tree/master/nodejs)
   * [`node12`](https://github.com/lhridder/yolks/tree/master/nodejs/12)
     * `ghcr.io/lhridder/yolks:nodejs_12`
@@ -25,10 +27,10 @@ fork from [yolks](https://github.com/pterodactyl/yolks) with a few small tweaks:
     * `ghcr.io/lhridder/yolks:nodejs_14`
   * [`node16`](https://github.com/lhridder/yolks/tree/master/nodejs/16)
     * `ghcr.io/lhridder/yolks:nodejs_16`
-  * [`node17`](https://github.com/lhridder/yolks/tree/master/nodejs/17)
-    * `ghcr.io/lhridder/yolks:nodejs_17`
   * [`node18`](https://github.com/lhridder/yolks/tree/master/nodejs/18)
     * `ghcr.io/lhridder/yolks:nodejs_18`
+  * [`node19`](https://github.com/lhridder/yolks/tree/master/nodejs/19)
+    * `ghcr.io/lhridder/yolks:nodejs_19`
 * [`python`](https://github.com/lhridder/yolks/tree/master/python)
   * [`python3.7`](https://github.com/lhridder/yolks/tree/master/python/3.7)
     * `ghcr.io/lhridder/yolks:python_3.7`
@@ -38,3 +40,5 @@ fork from [yolks](https://github.com/pterodactyl/yolks) with a few small tweaks:
     * `ghcr.io/lhridder/yolks:python_3.9`
   * [`python3.10`](https://github.com/lhridder/yolks/tree/master/python/3.10)
     * `ghcr.io/lhridder/yolks:python_3.10`
+  * [`python3.11`](https://github.com/lhridder/yolks/tree/master/python/3.11)
+    * `ghcr.io/lhridder/yolks:python_3.11`
