@@ -22,6 +22,7 @@ jobs:
           - 18
           - 19
           - 20
+          - 20-puppeteer
     steps:
       - uses: actions/checkout@v2
       # Setup QEMU for ARM64 Build

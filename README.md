@@ -33,8 +33,10 @@ fork from [yolks](https://github.com/pterodactyl/yolks) with a few small tweaks:
     * `ghcr.io/lhridder/yolks:nodejs_18`
   * [`node19`](https://github.com/lhridder/yolks/tree/master/nodejs/19)
     * `ghcr.io/lhridder/yolks:nodejs_19`
-  * [`node19`](https://github.com/lhridder/yolks/tree/master/nodejs/20)
+  * [`node20`](https://github.com/lhridder/yolks/tree/master/nodejs/20)
     * `ghcr.io/lhridder/yolks:nodejs_20`
+  * [`node20-puppeteer`](https://github.com/lhridder/yolks/tree/master/nodejs/20-puppeteer)
+    * `ghcr.io/lhridder/yolks:nodejs_20-puppeteer`
 * [`python`](https://github.com/lhridder/yolks/tree/master/python)
   * [`python3.7`](https://github.com/lhridder/yolks/tree/master/python/3.7)
     * `ghcr.io/lhridder/yolks:python_3.7`
