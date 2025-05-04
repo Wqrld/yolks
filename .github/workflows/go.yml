@@ -33,6 +33,9 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.REGISTRY_TOKEN }}
+      - name: Set lowercase repo owner
+        id: prep
+        run: echo "REPO_OWNER_LOWER=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
       - uses: docker/build-push-action@v2
         with:
           context: ./go
@@ -40,4 +43,4 @@ jobs:
           platforms: linux/amd64, linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/yolks:go_${{ matrix.tag }}
+            ghcr.io/${{ env.REPO_OWNER_LOWER }}/yolks:go_${{ matrix.tag }}
