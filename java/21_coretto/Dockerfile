@@ -1,4 +1,4 @@
-FROM --platform=$TARGETOS/$TARGETARCH amazoncorretto:21-al2
+FROM --platform=$TARGETOS/$TARGETARCH amazoncorretto:21.0.7-al2
 
 LABEL author="Michael Parker" maintainer="parker@pterodactyl.io"
 LABEL org.opencontainers.image.source="https://github.com/pterodactyl/yolks"
