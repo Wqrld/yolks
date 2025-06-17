@@ -23,6 +23,7 @@ jobs:
           - 18
           - 19
           - 21
+          - 21_coretto
           - 23
     steps:
       - uses: actions/checkout@v2
