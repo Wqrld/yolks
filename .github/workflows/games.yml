@@ -1,5 +1,6 @@
 name: build games
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
@@ -15,6 +16,7 @@ jobs:
         game:
           - source
           - rust
+          - bedrock
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-buildx-action@v1
