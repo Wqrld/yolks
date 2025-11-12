@@ -25,6 +25,7 @@ jobs:
           - 21
           - 21_coretto
           - 23
+          - 25
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-qemu-action@v1
