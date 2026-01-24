@@ -2,8 +2,8 @@
 # Hytale Server Launcher
 # This script handles staged updates and starts the server with default arguments.
 
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-cd "$SCRIPT_DIR"
+# SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+# cd "$SCRIPT_DIR"
 
 # Download downloader if missing
 if [[ ! -f hytale-downloader-linux-amd64 ]]; then
