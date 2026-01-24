@@ -52,7 +52,7 @@ while true; do
 
     # Start server and track time
     START_TIME=$(date +%s)
-    java -Xms128M -Xmx"${SERVER_MEMORY}M" $JVM_ARGS -jar HytaleServer.jar $DEFAULT_ARGS --bind "0.0.0.0:${SERVER_PORT}" "$@"
+    java -Xms128M -Xmx"${SERVER_MEMORY}M" $JVM_ARGS -jar ./Server/HytaleServer.jar $DEFAULT_ARGS --bind "0.0.0.0:${SERVER_PORT}" "$@"
     EXIT_CODE=$?
     ELAPSED=$(( $(date +%s) - START_TIME ))
 
