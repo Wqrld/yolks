@@ -40,19 +40,15 @@ while true; do
     fi
 
     # Run server from inside Server/ folder so config/backups/etc. are generated there
-    cd Server
+    
 
     # JVM arguments for AOT cache (faster startup)
     JVM_ARGS=""
-    if [ -f "HytaleServer.aot" ]; then
-        echo "[Launcher] Using AOT cache for faster startup"
-        JVM_ARGS="-XX:AOTCache=HytaleServer.aot"
-    fi
 
     # Default server arguments
     # --assets: Assets.zip is in parent directory
     # --backup: Enable periodic backups like singleplayer
-    DEFAULT_ARGS="--assets ../Assets.zip --backup --backup-dir backups --backup-frequency 30"
+    DEFAULT_ARGS="--assets ./Assets.zip --backup --backup-dir backups --backup-frequency 30"
 
     # Start server and track time
     START_TIME=$(date +%s)
