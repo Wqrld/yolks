@@ -42,8 +42,8 @@ while true; do
     # Run server from inside Server/ folder so config/backups/etc. are generated there
     
 
-    # JVM arguments for AOT cache (faster startup)
-    JVM_ARGS=""
+    # Hide some warnings
+    JVM_ARGS="--enable-native-access=ALL-UNNAMED"
 
     # Default server arguments
     # --assets: Assets.zip is in parent directory
