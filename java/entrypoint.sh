@@ -32,6 +32,8 @@ cd /home/container || exit 1
 # Print Java version
 java -version
 
+TZ="Europe/Amsterdam"
+
 # Convert all of the "{{VARIABLE}}" parts of the command into the expected shell
 # variable format of "${VARIABLE}" before evaluating the string and automatically
 # replacing the values.
