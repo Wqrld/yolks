@@ -16,9 +16,9 @@ fi
 # Run downloader if server jar is missing
 if [[ ! -f Server/HytaleServer.jar ]]; then
     echo "[Hytale] Running Hytale downloader (interactive)..."
-    rm -f 20*.zip
+    rm -f *.zip
     ./hytale-downloader-linux-amd64
-    unzip -o 20*.zip
+    unzip -o *.zip
 fi
 
 
