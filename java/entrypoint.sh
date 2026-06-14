@@ -33,6 +33,7 @@ cd /home/container || exit 1
 java -version
 
 TZ="Europe/Amsterdam"
+export TZ
 
 # Convert all of the "{{VARIABLE}}" parts of the command into the expected shell
 # variable format of "${VARIABLE}" before evaluating the string and automatically
