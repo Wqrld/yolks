@@ -21,10 +21,13 @@ RUN apt-get -y install libxcb-shm0 \
          libcairo-gobject2 \                           
          libcairo2 \                                   
          libgdk-pixbuf-2.0-0 \                         
-         libxrender1 \
-         libnspr4
+         libxrender1 \                      
+         libnspr4 \
+         libnss3 \
+         libxss1 \
+         libasound2
 
-RUN         npm install npm@latest typescript ts-node @types/node --location=global
+RUN         npm install npm@latest typescript ts-node @types/node tsx --location=global
 
 USER        container
 ENV         USER=container HOME=/home/container
