@@ -6,7 +6,7 @@ RUN         apt update \
             && apt -y install ffmpeg iproute2 git sqlite3 libsqlite3-dev python3 python3-dev ca-certificates dnsutils tzdata zip tar curl build-essential libtool iputils-ping cmake pkg-config build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev \
             && useradd -m -d /home/container container
 
-RUN apt-get install libxcb-shm0 \                     
+RUN apt-get -y install libxcb-shm0 \                     
          libx11-xcb1 \                                 
          libxrandr2 \                                  
          libxcomposite1 \                              
