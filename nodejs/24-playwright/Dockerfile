@@ -21,7 +21,8 @@ RUN apt-get install libxcb-shm0 \
          libcairo-gobject2 \                           
          libcairo2 \                                   
          libgdk-pixbuf-2.0-0 \                         
-         libxrender1
+         libxrender1 \
+         libnspr4
 
 RUN         npm install npm@latest typescript ts-node @types/node --location=global
 
