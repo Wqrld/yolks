@@ -20,6 +20,7 @@ jobs:
           - 20-puppeteer
           - 22
           - 24
+          - 24-playwright
           - 26
     steps:
       - uses: actions/checkout@v2
