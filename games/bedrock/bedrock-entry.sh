@@ -210,5 +210,36 @@ fi
 
 export LD_LIBRARY_PATH=.
 
+# NetherNet: signaling runs over TCP on SERVER_PORT, gameplay over UDP on the same port.
+# Clients must be told the public address, since the container only sees its Docker-internal one.
+# SERVER_PUBLIC_IP / SERVER_PUBLIC_IPV6 are provided by the daemon.
+# Sets a property, keeping exactly one line for it (server-udp-ports accumulates across lines).
+function upsert_property() {
+  local updated
+  updated=$(awk -v key="$1=" -v value="$2" '
+    index($0, key) == 1 { if (!done) print key value; done = 1; next }
+    { print }
+    END { if (!done) print key value }
+  ' server.properties)
+  printf '%s\n' "$updated" > server.properties
+}
+
+if isTrue "${NETHERNET_DISABLE:-false}"; then
+  echo "NetherNet: NETHERNET_DISABLE is set, leaving server.properties untouched"
+elif [[ -z "${SERVER_PUBLIC_IP}" && -z "${SERVER_PUBLIC_IPV6}" ]]; then
+  echo "WARN NetherNet: no public IP provided by the daemon, leaving server.properties untouched"
+else
+  touch server.properties
+  udpPorts=()
+  [[ -n "${SERVER_PUBLIC_IP}" ]] && udpPorts+=("${SERVER_PUBLIC_IP}:${SERVER_PORT}:${SERVER_PORT}")
+  [[ -n "${SERVER_PUBLIC_IPV6}" ]] && udpPorts+=("[${SERVER_PUBLIC_IPV6}]:${SERVER_PORT}:${SERVER_PORT}")
+  udpPortsValue=$(IFS=,; echo "${udpPorts[*]}")
+
+  upsert_property transport nethernet
+  upsert_property server-port "${SERVER_PORT}"
+  upsert_property server-udp-ports "${udpPortsValue}"
+  echo "NetherNet: server-udp-ports=${udpPortsValue}"
+fi
+
 echo "Starting Bedrock server..."
 exec ./"bedrock_server-${VERSION}"
