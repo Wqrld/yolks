@@ -230,10 +230,12 @@ elif [[ -z "${SERVER_PUBLIC_IP}" && -z "${SERVER_PUBLIC_IPV6}" ]]; then
   echo "WARN NetherNet: no public IP provided by the daemon, leaving server.properties untouched"
 else
   touch server.properties
-  udpPorts=()
-  [[ -n "${SERVER_PUBLIC_IP}" ]] && udpPorts+=("${SERVER_PUBLIC_IP}:${SERVER_PORT}:${SERVER_PORT}")
-  [[ -n "${SERVER_PUBLIC_IPV6}" ]] && udpPorts+=("[${SERVER_PUBLIC_IPV6}]:${SERVER_PORT}:${SERVER_PORT}")
-  udpPortsValue=$(IFS=,; echo "${udpPorts[*]}")
+  # Only one advertised IP is allowed; prefer IPv4 since every client can reach it.
+  if [[ -n "${SERVER_PUBLIC_IP}" ]]; then
+    udpPortsValue="${SERVER_PUBLIC_IP}:${SERVER_PORT}:${SERVER_PORT}"
+  else
+    udpPortsValue="[${SERVER_PUBLIC_IPV6}]:${SERVER_PORT}:${SERVER_PORT}"
+  fi
 
   upsert_property transport nethernet
   upsert_property server-port "${SERVER_PORT}"
