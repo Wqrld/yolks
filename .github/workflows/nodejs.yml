@@ -16,8 +16,6 @@ jobs:
       fail-fast: false
       matrix:
         tag:
-          - 20
-          - 20-puppeteer
           - 22
           - 24
           - 24-playwright
