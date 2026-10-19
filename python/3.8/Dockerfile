@@ -3,12 +3,15 @@ FROM        --platform=$TARGETOS/$TARGETARCH python:3.8-slim
 LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
 RUN         apt update \
-            && apt -y install git gcc g++ ca-certificates dnsutils curl iproute2 ffmpeg procps libmariadb-dev \
+            && apt -y install git gcc g++ ca-certificates dnsutils curl iproute2 ffmpeg procps tini libmariadb-dev \
             && useradd -m -d /home/container container
 
 USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
 
+STOPSIGNAL  SIGINT
+
 COPY        ./../entrypoint.sh /entrypoint.sh
+ENTRYPOINT  [ "/usr/bin/tini", "-g", "--" ]
 CMD         ["/bin/bash", "/entrypoint.sh"]
