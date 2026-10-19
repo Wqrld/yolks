@@ -29,10 +29,6 @@ fork from [yolks](https://github.com/pterodactyl/yolks) with a few small tweaks:
   * [`java25`](https://github.com/Wqrld/yolks/tree/master/java/25)
     * `ghcr.io/wqrld/yolks:java_25`
 * [`nodejs`](https://github.com/Wqrld/yolks/tree/master/nodejs)
-  * [`node20`](https://github.com/Wqrld/yolks/tree/master/nodejs/20)
-    * `ghcr.io/wqrld/yolks:nodejs_20`
-  * [`node20-puppeteer`](https://github.com/Wqrld/yolks/tree/master/nodejs/20-puppeteer)
-    * `ghcr.io/wqrld/yolks:nodejs_20-puppeteer`
   * [`node22`](https://github.com/Wqrld/yolks/tree/master/nodejs/22)
     * `ghcr.io/wqrld/yolks:nodejs_22`
   * [`node24`](https://github.com/Wqrld/yolks/tree/master/nodejs/24)
