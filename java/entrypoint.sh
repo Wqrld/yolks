@@ -29,28 +29,6 @@ export INTERNAL_IP
 # Switch to the container's working directory
 cd /home/container || exit 1
 
-# Java4Shell (CVE-2026-114938) stopgap: turn off the AVX-512 Base64 intrinsic.
-# Only x86-64 is affected. Instead of guessing from the image's version string,
-# ask the JVM whether it accepts the flag, so images whose JVM lacks it (Java 8)
-# still start. Set J4S_MITIGATION=0 to disable this, e.g. once the image runs a
-# fixed build (17.0.21.1, 21.0.13.1, 25.0.5.1 or newer).
-J4S_FLAG="-XX:-UseBASE64Intrinsics"
-if [ "${J4S_MITIGATION:-1}" != "0" ]; then
-    case "$(uname -m)" in
-        x86_64|amd64)
-            case " ${JAVA_TOOL_OPTIONS:-} " in
-                *" ${J4S_FLAG} "*) ;;  # already set
-                *)
-                    if java "${J4S_FLAG}" -version >/dev/null 2>&1; then
-                        export JAVA_TOOL_OPTIONS="${JAVA_TOOL_OPTIONS:+${JAVA_TOOL_OPTIONS} }${J4S_FLAG}"
-                        printf "\033[1m\033[33mJava4Shell mitigation enabled (%s)\033[0m\n" "${J4S_FLAG}"
-                    fi
-                    ;;
-            esac
-            ;;
-    esac
-fi
-
 # Print Java version
 java -version
 
